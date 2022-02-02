@@ -1,0 +1,15 @@
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.csproj.AssemblyReference.cache
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.AssemblyInfoInputs.cache
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.AssemblyInfo.cs
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.csproj.CoreCompileInputs.cache
+/Users/daniil/VS Code/STL/bin/Debug/net6.0/STL
+/Users/daniil/VS Code/STL/bin/Debug/net6.0/STL.deps.json
+/Users/daniil/VS Code/STL/bin/Debug/net6.0/STL.runtimeconfig.json
+/Users/daniil/VS Code/STL/bin/Debug/net6.0/STL.dll
+/Users/daniil/VS Code/STL/bin/Debug/net6.0/ref/STL.dll
+/Users/daniil/VS Code/STL/bin/Debug/net6.0/STL.pdb
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.dll
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/ref/STL.dll
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.pdb
+/Users/daniil/VS Code/STL/obj/Debug/net6.0/STL.genruntimeconfig.cache
