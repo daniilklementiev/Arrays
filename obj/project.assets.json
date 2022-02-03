@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/daniil/VS Code/STL/STL.csproj",
+      "projectUniqueName": "/Users/daniil/VS Code/C#/STL/STL.csproj",
       "projectName": "STL",
-      "projectPath": "/Users/daniil/VS Code/STL/STL.csproj",
+      "projectPath": "/Users/daniil/VS Code/C#/STL/STL.csproj",
       "packagesPath": "/Users/daniil/.nuget/packages/",
-      "outputPath": "/Users/daniil/VS Code/STL/obj/",
+      "outputPath": "/Users/daniil/VS Code/C#/STL/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/daniil/.nuget/NuGet/NuGet.Config"

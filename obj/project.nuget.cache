@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9SK7kG6fGehn+g3LYaoQfDa0t5uoVfxElAR3rtXB1c9Gt0s3+vQvsn4TffdYVAAoeTRFu/d4RfBgfivaURNM4g==",
+  "dgSpecHash": "IC4Iy4VN2LWRy7nxZSqqrxF20nO2fGRikDTGdSGBOdL03dZTBgwr3WWnquRckENZgjCgL1cYVaLr0rD5YuJkjw==",
   "success": true,
-  "projectFilePath": "/Users/daniil/VS Code/STL/STL.csproj",
+  "projectFilePath": "/Users/daniil/VS Code/C#/STL/STL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

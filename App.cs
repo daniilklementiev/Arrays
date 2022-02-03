@@ -1,57 +1,107 @@
-using System;
-using System.Collections.Generic;
+    using System;
+    using System.Collections.Generic;
 
-namespace STL {
-    partial class App 
-    {
-        int[] arr1;
-        int[,] arr2;
-        int[][] arr3;
-        public void Run() {
-            Console.WriteLine("О массивах и коллекциях");
-            arr1 = new int[10];
-            for(int i = 0; i < 10; i++) {
-                arr1[i] = i*i;
-            }
-            foreach(int x in arr1) {
-                Console.WriteLine(x);
-            }
-            Console.WriteLine($"Всего {arr1.Length} элементов");
-            
-            arr2 = new int[3, 4];
-            for(int i = 0; i < 3; i++)
+    namespace STL {
+        partial class App 
+        {
+            int[] arr1;
+            int[,] arr2;
+            int[][] arr3;
+
+            public void Run() 
             {
-                for(int j = 0; j < 4; j++)
-                {
-                    arr2[i, j] = 10 * i + j + 11;
+                CollectionsDemo();
+            }
+            public void CollectionsDemo() {
+                List<String> strings;
+                Dictionary<String, String> dict;
+
+                strings = new List<string>();
+                strings.Add("String 1");
+                strings.Add("String 2");
+                strings.Add("String 3");
+                foreach (String item in strings) {
+                    Console.WriteLine("item");
                 }
+
+                
+
             }
 
-            Console.WriteLine("двойной");
-            for(int i = 0; i < 3; i++)
+            public void CtorDemo() 
             {
-                for(int j = 0; j < 4; j++)
+                TheClass obj = new TheClass();
+                Console.WriteLine(obj);
+            }
+
+            public void ArraysDemo() {
+                Console.WriteLine("О массивах и коллекциях");
+                arr1 = new int[10];
+                for(int i = 0; i < 10; i++) {
+                    arr1[i] = i*i;
+                }
+                foreach(int x in arr1) {
+                    Console.WriteLine(x);
+                }
+                Console.WriteLine($"Всего {arr1.Length} элементов");
+                
+                arr2 = new int[3, 4];
+                for(int i = 0; i < 3; i++)
                 {
-                    Console.Write(arr2[i, j] + " ");
+                    for(int j = 0; j < 4; j++)
+                    {
+                        arr2[i, j] = 10 * i + j + 11;
+                    }
                 }
-                Console.WriteLine();
-            }
-            Console.WriteLine("-----------------");
-            arr3 = new int[3][];
-            for(int i = 0; i < 3; i++) 
-            {
-                arr3[i] = new int[2 + i];
-                for(int j = 0; j < 2 + i; j++) {
-                    arr3[i][j] = 10 * i + j + 11;
+
+                Console.WriteLine("двойной");
+                for(int i = 0; i < 3; i++)
+                {
+                    for(int j = 0; j < 4; j++)
+                    {
+                        Console.Write(arr2[i, j] + " ");
+                    }
+                    Console.WriteLine();
                 }
-            }
-            foreach(var x2 in arr3) 
-            {
-                foreach(var x in x2) {
-                    Console.Write(x + " ");
+                Console.WriteLine("-----------------");
+                arr3 = new int[3][];
+                for(int i = 0; i < 3; i++) 
+                {
+                    arr3[i] = new int[2 + i];
+                    for(int j = 0; j < 2 + i; j++) {
+                        arr3[i][j] = 10 * i + j + 11;
+                    }
                 }
-                Console.WriteLine();
+                foreach(var x2 in arr3) 
+                {
+                    foreach(var x in x2) 
+                    {
+                        Console.Write(x + " ");
+                    }
+                    Console.WriteLine();
+                }
             }
         }
+
+        class TheClass
+        {
+            private int x;
+            public TheClass() // конструктор с параметрами
+            {
+                x = 10;
+            }
+            private TheClass(int x) // конструктор с параметрами
+            {
+                this.x = x;
+            }
+            public override string ToString()
+            {
+                return $"x = {this.x}";
+            }
+
+
+            public int Y { get; set; } // auto property
+            public int W { get; private set; }
+            public int X { get { return this.x; }  set { this.x = value; } }
+        }
     }
-}
