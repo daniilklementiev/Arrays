@@ -10,12 +10,60 @@
 
                 public void Run() 
                 {
-                    CollectionsDemo();
+                    DictionaryEx();
                 }
+
+                public void DictionaryEx() {
+                    var dict = new Dictionary<String, String>();
+                    dict.Add("hello", "привет");
+                    dict.Add("bye", "пока");
+#region Menu
+                    Console.WriteLine("Англо-русский словарь");
+                    Console.WriteLine("1 - Найти перевод на Русский");
+                    Console.WriteLine("2 - Найти перевод на Английский");
+                    Console.WriteLine("3 - Добавить запись");
+                    Console.WriteLine("0 - Выход");
+#endregion
+                    var keyPressed = Console.ReadKey(true);
+                    while(keyPressed.KeyChar != '0') {
+#region Поиск по англ слову
+                        if(keyPressed.KeyChar == '1') {
+                            Console.WriteLine("Введите английское слово : ");
+                            String enWord = Console.ReadLine();
+                            String ruWord = null;
+                            try {
+                                ruWord = dict[enWord];
+                            }
+                            catch {
+                                ruWord = "НЕ НАЙДЕНО";
+                            }
+                            finally {
+                                Console.WriteLine($"ru : {ruWord}");
+                            }
+                        }
+                        else if(keyPressed.KeyChar == '2') {
+                            Console.WriteLine("Введите русское слово : ");
+                            String ruWord = Console.ReadLine();
+
+                            foreach(var it in dict) 
+                            {
+                                if(it.Value == ruWord) {
+                                    Console.WriteLine($"Перевод: {it.Key}");
+                                    break;
+                                }
+                                else {
+                                    Console.WriteLine("НЕ НАЙДЕНО");
+                                }
+                            }
+                        }
+#endregion
+                    }
+                }
+               
                 public void CollectionsDemo() {
                     List<String> strings;
                     Dictionary<String, String> dict;
-
+                    #region List
                     strings = new List<string>();
                     strings.Add("String 1");
                     strings.Add("String 2");
@@ -36,6 +84,7 @@
                     // foreach(String item in strings) {item += " -- ";}
                     // в) саму коллекцию
                     strings.Remove("String 4");
+                    strings.RemoveAll(s => s.Equals("String 4"));
                     foreach (String item in strings) {
                         Console.WriteLine(item);
                     }
@@ -48,8 +97,42 @@
                     // foreach (String item in strings)
                     //     strings.Remove("String 3");
                     // нельзя. Ошибок компиляции нет, но при выполнении - исключение
+                    strings.Clear(); // очистка коллекции
+                    #endregion 
                     
+                    #region Dictionary
+                    // словарь - набор "пар" ключ-значение
+                    // при объявлении указываем два типа: для ключа, для значения
+                    dict = new Dictionary<String, String>();
+                    dict.Add("one", "раз");
+                    dict.Add("two", "два");
+                    dict.Add("three", "три");
 
+                    dict["one"] = "один"; // изменение по ключу
+                    dict["four"] = "четыре";
+                    dict["five"] = null;
+                    // Console.WriteLine(dict["one"]); // обращение к значению по ключу: если ключ есть - выводится
+                                                    // иначе - исключение
+                    // Console.WriteLine(dict["five"] ?? "NULL");
+
+                    foreach(var pair in dict) // KeyValuePair<string, string>
+                    {
+                        Console.WriteLine($"{pair.Key} - {pair.Value}");
+                    }
+                    // поиск
+                    Console.WriteLine("------------------");
+                    // 1. Ключ (есть ли такой ключ)
+                    Console.WriteLine(dict.ContainsKey("five"));
+                    Console.WriteLine(dict.ContainsKey("six"));
+                    // 2. Значение (есть ли)
+                    Console.WriteLine(dict.ContainsValue("два"));
+                    Console.WriteLine(dict.ContainsValue("семь"));
+                    foreach(String str in new String[] {"3", "4", "5"})
+                    {
+                        dict.Add(str, "digit");
+                    }
+
+                    #endregion
                 }
 
                 public void CtorDemo() 
